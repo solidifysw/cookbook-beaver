@@ -8,7 +8,7 @@
 
 <% @files.each do |file| %>
 [<%= file["path"] %>]
-  <% file["options"].each do |key, value| %>
-<%= "#{key}: #{value}" %>
+  <% file.each do |key, value| %>
+<%= "#{key}: #{value}" unless key == "path" %>
   <% end %>
 <% end %>
